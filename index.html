@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="./js/actions.js"></script>
+    <link rel="stylesheet" href="./styles/slider.css" />
+    <title>Pixel Defi</title>
+  </head>
+  <body class="m-0">
+    <canvas id="canvas" class="fixed z-0"></canvas>
+    <script src="./js/canvas.js"></script>
+
+    <div id="dialog" class="fixed z-10 top-2/4 -translate-y-2/4 text-lg">
+      <div
+        id="hide-dialog"
+        class="justify-self-center bg-gray-600 p-2 opacity-80 hover:opacity-100 fixed -top-10"
+        onclick="toggleHide()"
+        role="button"
+        title="Hide dialog"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </div>
+      <div
+        id="settings"
+        class="overflow-hidden sidenav w-48 border-2 border-solid border-gray-600"
+      >
+        <div
+          class="grid grid-cols-2 justify-items-stretch gap-3 bg-gray-400 p-2 pr-0"
+        >
+          <p class="mt-auto mb-auto justify-self-start truncate">
+            Switch side:
+          </p>
+          <div
+            id="move-dialog"
+            class="justify-self-center p-2 bg-cyan-600 opacity-80 hover:opacity-100"
+            onclick="toggleSide()"
+            role="button"
+            title="Move dialog to other side"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 5l7 7-7 7M5 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+
+          <p class="mt-auto mb-auto justify-self-start">Background:</p>
+          <label class="switch justify-self-center">
+            <input type="checkbox" onclick="toggleColor()" />
+            <span
+              id="bg-toggle"
+              class="slider round"
+              title="Set black background"
+            ></span>
+          </label>
+
+          <p class="mt-auto mb-auto justify-self-start">Reset:</p>
+          <div
+            id="reset-canvas"
+            class="justify-self-center p-2 bg-cyan-600 opacity-80 hover:opacity-100"
+            onclick="resetCanvas()"
+            role="button"
+            title="Reset all placed stressers"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
